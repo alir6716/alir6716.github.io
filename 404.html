@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta charset="UTF-8">
+	<title>You've been 404'ed!</title>
+	<style type="text/css">
+		.container {
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			padding:0;
+			margin:0;
+			left: 0px;
+			top: 0px;
+			z-index: -1000;
+			overflow:hidden;
+			}
+
+		.videoPlayer {
+			min-height: 100%;
+			//min-width:100%; - if fit to width
+			position:absolute;
+			bottom:0;
+			left:0;
+		}
+	</style>
+</head>
+
+<body bgcolor="#080808">
+	<center>
+		<a href="http://alir6716.github.io">
+			<div class="container">
+				<video class="videoPlayer" controls="false" onplaying="this.controls=false" autoplay>
+					<!-- Credit: Firespotter Labs (https://vimeo.com/26858445) -->
+					<source src="./videos/404.mp4" type="video/mp4" />
+				</video>
+			</div>
+		</a>
+	</center>
+</body>
