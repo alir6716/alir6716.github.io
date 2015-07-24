@@ -37,8 +37,8 @@
 				<!-- The following attributes disable player controls, and sets the video to autoplay when the site is loaded. -->
 				<video class="videoPlayer" controls="false" onplaying="this.controls=false" autoplay>
 					<!-- Credit: Firespotter Labs (https://vimeo.com/26858445) -->
-					<!-- SRC connects to video from site URL, not from local directory. This allows the 404 message to play in different directories. -->
-					<source src="http://alir6716.github.io/videos/404.mp4" type="video/mp4" /> 
+					<!-- Video will NOT play in different directories. Working on an issue to resolve this. -->
+					<source src="./videos/404.mp4" type="video/mp4" /> 
 					<!-- Fallback, in case <video> tag is not supported within the browser. -->
 					<img src="./images/video_fallback.png" title="Your browser does not support the <video> tag.">
 				</video>
