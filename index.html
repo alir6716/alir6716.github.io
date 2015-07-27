@@ -73,10 +73,19 @@
 			vertical-align: middle;
 		}
 	</style>
-	<style type="text/css"></style>
+	<link rel="stylesheet" href="css/index.css">
 </head>
 
 <body>
+	<div id="loader-wrapper">
+		<div id="loader"></div>
+
+		<div class="loader-section section-left"></div>
+		<div class="loader-section section-right"></div>
+
+		<div id="content">
+		</div>
+	</div>
 	<div id="a" itemscope="" itemtype="http://data-vocabulary.org/Person">
 		<div class="microdata">
 			<span itemprop="name">Ali Raja</span>
@@ -99,7 +108,8 @@
 			</div>
 		</div>
 	</div>	
-
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script src="js/index.js"></script>
 </body>
 
 </html>
