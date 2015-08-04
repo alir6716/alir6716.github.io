@@ -17,4 +17,4 @@ Personal site.
 * [Samaritan](http://alir6716.github.io/Samaritan)
 
 ## Problems/Suggestions?
-If you have encountered a problem, or wish to make a suggestion, [send me an email](mailto:alir6716.github.io).
+If you have encountered a problem, or wish to make a suggestion, [send me an email](mailto:alir6716@gmail.com).
