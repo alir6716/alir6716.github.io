@@ -14,7 +14,7 @@ Personal site.
 ## Pages in other Repos:
 * [About](http://alir6716.github.io/about)
 * [AgeCalc](http://alir6716.github.io/agecalc)
-* [InstaMedia] (__Coming Soon__)
+* [InstaMedia](#) (__Coming Soon__)
 * [Samaritan](http://alir6716.github.io/Samaritan)
 
 ## Problems/Suggestions?
