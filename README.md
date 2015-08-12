@@ -15,6 +15,7 @@ Personal site.
 * [About](http://alir6716.github.io/about)
 * [AgeCalc](http://alir6716.github.io/agecalc)
 * [InstaMedia](#) (__Coming Soon__)
+* [Playground](http://alir6716.github.io/playground) (__In Development__)
 * [Samaritan](http://alir6716.github.io/Samaritan)
 
 ## Problems/Suggestions?
