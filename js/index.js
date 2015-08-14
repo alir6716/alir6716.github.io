@@ -6,3 +6,7 @@ $(document).ready(function() {
   }, 3000);
 
 });
+
+function togglePreloader() {
+	$('body').toggleClass('loaded');
+};
