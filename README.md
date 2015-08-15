@@ -7,6 +7,7 @@ Personal site.
 * [Index](http://alir6716.github.io/)
 * [Name](http://alir6716.github.io/name)
 * [Particle](http://alir6716.github.io/particle)
+* [Redirect](http://alir6716.github.io/redirect) (__"rdr" url parameter must be specified__)
 * [Ribbon](http://alir6716.github.io/ribbon)
 * [Source](http://alir6716.github.io/source)
 * [Trail](http://alir6716.github.io/trail)
