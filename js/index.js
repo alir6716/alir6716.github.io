@@ -9,4 +9,4 @@ $(document).ready(function() {
 
 function togglePreloader() {
 	$('body').toggleClass('loaded');
-};
+}

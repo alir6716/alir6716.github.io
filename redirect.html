@@ -197,12 +197,12 @@
 		var redirectURL = getURLParameter('rdr');
 		if (redirectURL === undefined) {
 			redirectURL = "#";
-		};
+		}
 		
 		var timeout = getURLParameter('timeout');
 		if (timeout === undefined) {
 			timeout = 5000;
-		};
+		}
 		
 		setTimeout(function() {
 			window.location = redirectURL;
