@@ -1,5 +1,37 @@
 # Changelog
 
+## 2015-09-30
+* "Fun" folder added, and some pages (+css and js) have been moved to this. These include:
+   * Confetti
+   * Name
+   * Particle
+   * Ribbon
+   * Solar System
+   * Trail
+
+## 2015-09-26
+* Favicon changed.
+
+## 2015-09-19
+* Fallback SRC for 404 Page's video changed.
+
+## 2015-09-11
+* Google Site Verification added to main page.
+
+## 2015-09-02
+* .idea folder created, so page can be opened in [WebStorm](https://www.jetbrains.com/webstorm/)
+
+## 2015-08-18
+* "timeout" URL Parameter added to Redirect Page.
+
+## 2015-08-15
+* __Redirect Page__ added.
+* Source code page now redirects to Redirect Page.
+* __Solar System Page__ added.
+
+## 2015-08-14
+* Function "togglePreloader" added to main page.
+
 ## 2015-08-04
 * __Source Code Redirect Page__ added.
 * Closing HTML tag for 404 Page added.
