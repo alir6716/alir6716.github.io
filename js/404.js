@@ -1,6 +1,7 @@
 // Looks at URL that user is trying to reach, and attempts to redirect them to their desired location.
 
 function goTo(dest) {
+	document.getElementById("page-title").innerHTML = "Redirecting... | AR"
 	window.location = dest + window.location.search;
 }
 
