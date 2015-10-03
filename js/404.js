@@ -34,6 +34,7 @@ switch (window.location.pathname) {
 		goTo("https://github.com/alir6716/alir6716.github.io")
 		break;
 	case "/insta":
+	case "/insta/":
 		goTo(base + "/personal/insta")
 		break;
 	
