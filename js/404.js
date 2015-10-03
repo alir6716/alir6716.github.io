@@ -4,27 +4,29 @@ function goTo(dest) {
 	window.location = dest;
 }
 
+var base = "http://alir6716.github.io"
+
 switch (window.location.pathname) {
 	// Moved URLs
 	case "/confetti":
-		goTo("http://alir6716.github.io/fun/confetti")
+		goTo(base + "/fun/confetti")
 	case "/name":
-		goTo("http://alir6716.github.io/fun/name")
+		goTo(base + "/fun/name")
 	case "/particle":
-		goTo("http://alir6716.github.io/fun/particle")
+		goTo(base + "/fun/particle")
 	case "/ribbon":
-		goTo("http://alir6716.github.io/fun/ribbon")
+		goTo(base + "/fun/ribbon")
 	case "/trail":
-		goTo("http://alir6716.github.io/fun/trail")
+		goTo(base + "/fun/trail")
 	
 	// Others
 	case "/314":
-		goTo("http://alir6716.github.io/personal/txts/pi_nospace.txt")
+		goTo(base + "/personal/txts/pi_nospace.txt")
 	case "/src":
 	case "/source":
 		goTo("https://github.com/alir6716/alir6716.github.io")
 	case "/insta":
-		goTo("http://alir6716.github.io/personal/insta")
+		goTo(base + "/personal/insta")
 	
 	// Default
 	default:
