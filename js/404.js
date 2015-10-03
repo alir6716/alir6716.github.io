@@ -1,7 +1,7 @@
 // Looks at URL that user is trying to reach, and attempts to redirect them to their desired location.
 
 function goTo(dest) {
-	window.location = dest;
+	window.location = dest + window.location.search;
 }
 
 var base = "http://alir6716.github.io"
