@@ -37,6 +37,9 @@ switch (window.location.pathname) {
 	case "/insta/":
 		goTo(base + "/personal/insta")
 		break;
+	case "/tftd":
+		goTo(base + "/personal/others/school/The_Smurf_Suite.pptx")
+		break;
 	
 	// Default
 	default:
