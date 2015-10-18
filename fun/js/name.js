@@ -1,9 +1,3 @@
-// Gets the URL parameter value of a specified URL parameter. If no value is specified, the default text "Ali Raja" will be returned.
-// Thanks to radicand for the following function (http://stackoverflow.com/a/8764051/4759922).
-function getURLParameter(name) {
-  return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||"Ali Raja";
-}
-
 var white = [0, 0, 100];
 var black = [0, 0, 27];
 var red = [0, 100, 63];
