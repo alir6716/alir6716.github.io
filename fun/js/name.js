@@ -1,5 +1,5 @@
 var name = getURLParameter("name")
-if (name === undefined) {
+if (name == undefined) {
 	name = "Ali Raja"
 }
 
