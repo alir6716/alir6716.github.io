@@ -38,6 +38,9 @@ switch (window.location.pathname) {
 	case "/insta/":
 		goTo(base + "/personal/insta")
 		break;
+	case "/insta/token":
+	case "/insta/token/":
+		goTo(base + "/personal/insta/token")
 	
 	// Default
 	default:
