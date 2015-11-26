@@ -34,7 +34,7 @@ function hdify() {
 
 
 // If "username" URL parameter specified, get InstaID of username and reload the page.
-var username = getURLParameter("username")
+var username = getURLParameter("username") || getURLParameter("un");
 if (username != undefined) {
 	$.ajax({
 		type: "GET",
@@ -48,16 +48,16 @@ if (username != undefined) {
 
 
 // Gets value of "userid" URL parameter.
-var uID = getURLParameter("userid");
+var uID = getURLParameter("userid") || getURLParameter("uid");
 
 // Gets value of "rows" URL parameter. If no value for "rows" URL parameter specified, rows will be set to 4.
-var rows = getURLParameter("rows");
+var rows = getURLParameter("rows") || getURLParameter("r");
 if (rows === undefined) {
 	rows = 4;
 }
 
 // Gets value of "adjust" URL parameter. If "adjust" is set to true, the "rows" parameter will be overridden.
-var adjust = getURLParameter("adjust")
+var adjust = getURLParameter("adjust") || getURLParameter("a");
 if (adjust == true) {
 	if (window.innerWidth > window.innerHeight) {
 		rows = 1.999;
@@ -67,7 +67,7 @@ if (adjust == true) {
 }
 
 // Gets value of "accessToken" hash parameter. If no value for "accessToken" hash parameter specified, default accessToken will be set.
-var aToken = getHashParameter("accessToken") || getHashParameter("access_token")
+var aToken = getHashParameter("accessToken") || getHashParameter("access_token") || getHashParameter("token");
 if (aToken === undefined) {
 	aToken = "2086210446.1677ed0.30f2adcd8a9f4a7f9d2a8087055f95f9";
 }
