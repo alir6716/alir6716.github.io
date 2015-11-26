@@ -25,6 +25,14 @@ switch (window.location.pathname) {
 	case "/trail":
 		goTo(base + "/fun/trail")
 		break;
+	case "/personal/insta":
+	case "/personal/insta/":
+		goTo(base + "/insta")
+		break;
+	case "/personal/insta/token":
+	case "/personal/insta/token/":
+		goTo(base + "/insta/token")
+		break;
 	
 	// Others
 	case "/314":
@@ -35,13 +43,11 @@ switch (window.location.pathname) {
 		goTo("https://github.com/alir6716/alir6716.github.io")
 		break;
 	case "/ig":
-	case "/personal/insta":
-	case "/personal/insta/":
+	case "/ig/":
 		goTo(base + "/insta")
 		break;
 	case "/igtoken":
-	case "/personal/insta/token":
-	case "/personal/insta/token/":
+	case "/igtoken/":
 		goTo(base + "/insta/token")
 		break;
 	
