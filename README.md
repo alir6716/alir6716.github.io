@@ -5,6 +5,7 @@ Personal site.
 * [404](http://alir6716.github.io/404)
 * [Confetti](http://alir6716.github.io/confetti)
 * [Index](http://alir6716.github.io/)
+* [Insta](http://alir6716.github.io/insta/)
 * [Name](http://alir6716.github.io/name) (__Optional "name" URL Parameter may be used__)
 * [Particle](http://alir6716.github.io/particle)
 * [Redirect](http://alir6716.github.io/redirect) (__"rdr" URL Parameter must be used__)
