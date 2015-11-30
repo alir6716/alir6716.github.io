@@ -51,6 +51,13 @@ switch (window.location.pathname) {
 		goTo(base + "/insta/token")
 		break;
 	
+	// Random
+	case "/blondielaugh":
+	case "/gilgameshlaugh":
+		goTo("https://www.youtube.com/watch?v=1VD70_8IN1w")
+		break;
+	
+	
 	// Default
 	default:
 		break;
