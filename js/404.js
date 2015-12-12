@@ -38,6 +38,9 @@ switch (window.location.pathname) {
 	case "/314":
 		goTo(base + "/personal/txts/pi_nospace.txt")
 		break;
+	case "/home":
+		goTo(base)
+		break;
 	case "/src":
 	case "/source":
 		goTo("https://github.com/alir6716/alir6716.github.io")
