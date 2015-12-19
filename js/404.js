@@ -72,7 +72,9 @@ switch (window.location.pathname) {
 	case "/gilgameshlaugh":
 		goTo("https://www.youtube.com/watch?v=1VD70_8IN1w")
 		break;
-	
+	case "/excalibur":
+		goTo("https://www.youtube.com/watch?v=mbgY4NF5xVE")
+		break;
 	
 	// Default
 	default:
