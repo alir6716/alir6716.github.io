@@ -5,10 +5,6 @@
  * Created by AR.
  */
 
-function getURLParameter(name) {
-	return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||undefined;
-}
-
 function goTo(dest) {
 	document.getElementById("page-title").innerHTML = "Redirecting... | AR"
 	// location.hash now supported.
@@ -17,12 +13,7 @@ function goTo(dest) {
 
 var base = "http://alir6716.github.io"
 
-var intendedDest = getURLParameter("intent");
-if (intendedDest == undefined) {
-	intendedDest = window.location.pathname
-}
-
-switch (intendedDest) {
+switch (window.location.pathname) {
 	// Moved URLs
 	case "/confetti":
 		goTo(base + "/fun/confetti")
