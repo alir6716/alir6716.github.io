@@ -1,4 +1,13 @@
-// Looks at URL that user is trying to reach, and attempts to redirect them to their desired location.
+/*
+ * 404.js
+ * Looks at URL that user is trying to reach, and attempts to redirect them to their desired location.
+ *
+ * Created by AR.
+ */
+
+function getURLParameter(name) {
+	return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||undefined;
+}
 
 function goTo(dest) {
 	document.getElementById("page-title").innerHTML = "Redirecting... | AR"
@@ -8,7 +17,12 @@ function goTo(dest) {
 
 var base = "http://alir6716.github.io"
 
-switch (window.location.pathname) {
+var intendedDest = getURLParameter("intent");
+if (intendedDest == undefined) {
+	intendedDest = window.location.pathname
+}
+
+switch (intendedDest) {
 	// Moved URLs
 	case "/confetti":
 		goTo(base + "/fun/confetti")
