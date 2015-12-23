@@ -14,7 +14,7 @@ function goTo(dest) {
 var base = "http://alir6716.github.io"
 
 switch (window.location.pathname) {
-	// Moved URLs
+	/* Moved URLs */
 	case "/personal/insta":
 	case "/personal/insta/":
 		goTo(base + "/insta")
@@ -23,8 +23,12 @@ switch (window.location.pathname) {
 	case "/personal/insta/token/":
 		goTo(base + "/insta/token")
 		break;
+	case "/redirect":
+	case "/redirect/":
+		goTo(window.location.search.replace("?rdr=", ""))
+		break;
 	
-	// Others
+	/* Others */
 	case "/314":
 		goTo(base + "/personal/txts/pi_nospace.txt")
 		break;
@@ -44,7 +48,7 @@ switch (window.location.pathname) {
 		goTo(base + "/insta/token")
 		break;
 	
-	// Fate Fight Scenes. (Yeah, I'm actually making a set of cases for this :P)
+	/* Fate Fight Scenes. (Yeah, I'm actually making a set of cases for this :P) */
 	case "/archerlancer":
 		goTo("https://www.youtube.com/watch?v=tGz42vpeGKk")
 		break;
