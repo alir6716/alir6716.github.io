@@ -89,6 +89,10 @@ if (uID != undefined) {
 	feed.run();
 	// Converts images to HD.
 	hdify();
+	// Temporary fix for "hdify" not working.
+	setTimeout(function() {
+		hdify();
+	}, 500)
 	
 	// When user reaches the end of the page, load more images.
 	// Thanks to Nick Craver for the following scroll solution (http://stackoverflow.com/a/3898152).
