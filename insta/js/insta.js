@@ -22,12 +22,16 @@ function hdify() {
 	setTimeout(function() {
 		for (var i=0; i < aElements.length; i++) {
 			// Replaces the "/s640x640" part of the image URL, to make images HD.
-			aElements[i].setAttribute("href", aElements[i].getAttribute("href").replace("/s640x640", ""))
-			imgElements[i].setAttribute("src", imgElements[i].getAttribute("src").replace("/s640x640", ""))
+			aElements[i].setAttribute("href", aElements[i].getAttribute("href").replace("/s640x640/sh0.08", ""))
+			imgElements[i].setAttribute("src", imgElements[i].getAttribute("src").replace("/s640x640/sh0.08", ""))
 			/* I've noticed that some images are 480x480 px... so I've added a temporary fix until I can 
 			 * find a way to get rid of both sizes (and others) from the URLs (at the same time.) */
-			aElements[i].setAttribute("href", aElements[i].getAttribute("href").replace("/s480x480", ""))
-			imgElements[i].setAttribute("src", imgElements[i].getAttribute("src").replace("/s480x480", ""))
+			aElements[i].setAttribute("href", aElements[i].getAttribute("href").replace("/s480x480/sh0.08", ""))
+			imgElements[i].setAttribute("src", imgElements[i].getAttribute("src").replace("/s480x480/sh0.08", ""))
+			/* Seriously, people should stop uploading really low quality photos.
+			 * Temporary fix for 320x320 px photos. */
+			aElements[i].setAttribute("href", aElements[i].getAttribute("href").replace("/s320x320", ""))
+			imgElements[i].setAttribute("src", imgElements[i].getAttribute("src").replace("/s320x320", ""))
 		}
 	}, 1000)
 }
