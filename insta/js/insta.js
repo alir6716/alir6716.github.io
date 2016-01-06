@@ -21,7 +21,7 @@ function hdify() {
 	// Delay of one second means that images have time to load before being converted to ~1080x1080.
 	setTimeout(function() {
 		for (var i=0; i < aElements.length; i++) {
-			// Replaces the "/s640x640" part of the image URL, to make images HD.
+			/* Replaces the "/s640x640" part of the image URL, to make images HD. */
 			aElements[i].setAttribute("href", aElements[i].getAttribute("href").replace("/s640x640/sh0.08", ""))
 			imgElements[i].setAttribute("src", imgElements[i].getAttribute("src").replace("/s640x640/sh0.08", ""))
 			/* I've noticed that some images are 480x480 px... so I've added a temporary fix until I can 
