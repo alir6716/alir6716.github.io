@@ -64,6 +64,9 @@ switch (window.location.pathname) {
 	case "/excalibur":
 		goTo("https://www.youtube.com/watch?v=mbgY4NF5xVE")
 		break;
+	case "/FateZero":
+		goTo(base + "/personal/zips/FateZero.zip")
+		break;
 	
 	// Default
 	default:
