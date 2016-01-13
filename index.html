@@ -103,14 +103,25 @@
 						<a href="mailto:alir6716@gmail.com" id="gmail" target="_blank">Gmail</a>, 
 						<a href="https://instagram.com/alir6716" id="instagram" target="_blank">Instagram</a>, 
 						<a href="skype:live:alir407?chat" id="skype" target="_blank">Skype</a>, and 
-						<a href="./images/snapcode.png" id="snapchat" target="_blank">Snapchat</a>!
+						<a href="images/snapcode.png" id="snapchat" target="_blank">Snapchat</a>!
 					</span>
 				</span>
 			</div>
 		</div>
-	</div>	
+	</div>
+	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-	<script src="js/index.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			setTimeout(function() {
+				$("body").addClass("loaded");
+			}, 3000);
+		});
+		
+		function togglePreloader() {
+			$("body").toggleClass("loaded");
+		};
+	</script>
 </body>
 
 </html>
