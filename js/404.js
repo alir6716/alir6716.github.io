@@ -48,27 +48,19 @@ switch (window.location.pathname) {
 		goTo(base + "/insta/token")
 		break;
 	
-	/* Fate Fight Scenes. (Yeah, I'm actually making a set of cases for this :P) */
-	case "/archerlancer":
-		goTo("https://www.youtube.com/watch?v=tGz42vpeGKk")
-		break;
-	case "/rinshirou":
-		goTo("https://www.youtube.com/watch?v=pYnjxvyWmBM")
-		break;
-	
-	// Random
+	/* Random */
 	case "/blondielaugh":
 	case "/gilgameshlaugh":
 		goTo("https://www.youtube.com/watch?v=1VD70_8IN1w")
 		break;
 	case "/excalibur":
-		goTo("https://www.youtube.com/watch?v=mbgY4NF5xVE")
+		goTo("https://www.artstation.com/embed/1765306")
 		break;
 	case "/FateZero":
 		goTo(base + "/personal/zips/FateZero.zip")
 		break;
 	
-	// Default
+	/* Default */
 	default:
 		break;
 }
