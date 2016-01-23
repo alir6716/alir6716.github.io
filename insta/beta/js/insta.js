@@ -94,9 +94,9 @@ if (uID != undefined) {
 				};
 				// Pushes image to "instafeed" div.
 				$("#instafeed").append('<a href="' + imageURL + '"><img src="' + imageURL + '" title="' + imageCaption + '" width="' + 100/rows + '%">');
-			}
+			};
 		}
-	}
+	};
 	// Sends object to instafeed.js and runs.
 	var feed = new Instafeed(ufObj);
 	feed.run();
@@ -107,14 +107,14 @@ if (uID != undefined) {
 		if ($(window).scrollTop() + $(window).height() > $(document).height() - 100) {
 			// Loads more images from feed.
 			feed.next();
-		}
+		};
 	});
-} 
+}
 // If userid not specified...
 else {
 	// Displays error in "instafeed" div.
 	document.getElementById("instafeed").innerHTML = '<p>"userid" URL parameter not found.</p>';
-}
+};
 
 
 // Changes page title.
