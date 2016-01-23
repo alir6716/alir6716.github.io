@@ -88,11 +88,10 @@ if (uID != undefined) {
 				images.push(imageURL);
 				try {
 					imageCaption = data[i].caption.text;
-				} 
-				catch (err) {
+				} catch (err) {
 					// If no image caption present, set it to an empty string.
 					imageCaption = "";
-				}
+				};
 				// Pushes image to "instafeed" div.
 				$("#instafeed").append('<a href="' + imageURL + '"><img src="' + imageURL + '" title="' + imageCaption + '" width="' + 100/rows + '%">');
 			}
