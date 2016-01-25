@@ -59,6 +59,8 @@ if (uID != undefined) {
 	uID = parseInt(uID);
 	// Creates Image List.
 	var images = new Array();
+	// Video/Image Switch.
+	var videoSwitch = getURLParameter("video") || getURLParameter("v");
 	// Constructs object.
 	var ufObj = {
 		get: 'user',
@@ -71,8 +73,9 @@ if (uID != undefined) {
 		success: function(model) {
 			var data = model.data;
 			for (var i=0; i < data.length; i++) {
+				currentMedia = data[i]
 				// Grabs the image URL.
-				imageURL = data[i].images.standard_resolution.url;
+				imageURL = currentMedia.images.standard_resolution.url;
 				// "HDIFY" process here. RIP "HDIFY" function.
 				imageURL = imageURL.replace("/s640x640", "");
 				imageURL = imageURL.replace("/s480x480", "");
@@ -87,11 +90,16 @@ if (uID != undefined) {
 				// Pushes to "images" array.
 				images.push(imageURL);
 				try {
-					imageCaption = data[i].caption.text;
+					imageCaption = currentMedia.caption.text;
 				} catch (err) {
 					// If no image caption present, set it to an empty string.
 					imageCaption = "";
 				};
+				// Optional video support.
+				if ("videos" in currentMedia && videoSwitch) {
+					$("#instafeed").append('<video controls width="' + 100/rows + '%"><source src="' + currentMedia.videos.standard_resolution.url +'"></video>');
+					continue;
+				}
 				// Pushes image to "instafeed" div.
 				$("#instafeed").append('<a href="' + imageURL + '"><img src="' + imageURL + '" title="' + imageCaption + '" width="' + 100/rows + '%">');
 			};
