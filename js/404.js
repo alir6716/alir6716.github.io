@@ -15,6 +15,10 @@ var base = "http://alir6716.github.io"
 
 switch (window.location.pathname) {
 	/* Moved URLs */
+	case "/insta/beta":
+	case "/insta/beta/":
+		goTo(base + "/insta")
+		break;
 	case "/personal/insta":
 	case "/personal/insta/":
 		goTo(base + "/insta")

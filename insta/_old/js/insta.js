@@ -8,10 +8,33 @@
 // Gets URL Parameters.
 function getURLParameter(name) {
 	return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||undefined;
-};
+}
 function getHashParameter(name) {
 	return decodeURIComponent((new RegExp('[#|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.hash)||[,""])[1].replace(/\+/g, '%20'))||undefined;
-};
+}
+
+// Converts images to ~1080x1080.
+function hdify() {
+	// Assigns all "a" and "img" tags to variables, for easier access.
+	aElements = document.getElementsByTagName("a")
+	imgElements = document.getElementsByTagName("img")
+	// Delay of one second means that images have time to load before being converted to ~1080x1080.
+	setTimeout(function() {
+		for (var i=0; i < aElements.length; i++) {
+			/* Replaces the "/s640x640" part of the image URL, to make images HD. */
+			aElements[i].setAttribute("href", aElements[i].getAttribute("href").replace("/s640x640/sh0.08", ""))
+			imgElements[i].setAttribute("src", imgElements[i].getAttribute("src").replace("/s640x640/sh0.08", ""))
+			/* I've noticed that some images are 480x480 px... so I've added a temporary fix until I can 
+			 * find a way to get rid of both sizes (and others) from the URLs (at the same time.) */
+			aElements[i].setAttribute("href", aElements[i].getAttribute("href").replace("/s480x480/sh0.08", ""))
+			imgElements[i].setAttribute("src", imgElements[i].getAttribute("src").replace("/s480x480/sh0.08", ""))
+			/* Seriously, people should stop uploading really low quality photos.
+			 * Temporary fix for 320x320 px photos. */
+			aElements[i].setAttribute("href", aElements[i].getAttribute("href").replace("/s320x320", ""))
+			imgElements[i].setAttribute("src", imgElements[i].getAttribute("src").replace("/s320x320", ""))
+		}
+	}, 1000)
+}
 
 
 // If "username" URL parameter specified, get InstaID of username and reload the page.
@@ -25,7 +48,7 @@ if (username != undefined) {
 			window.location = window.location.origin + window.location.pathname + "?userid=" + data.data[0].id
 		}
 	});
-};
+}
 
 
 // Gets value of "userid" URL parameter.
@@ -35,7 +58,7 @@ var uID = getURLParameter("userid") || getURLParameter("uid");
 var rows = getURLParameter("rows") || getURLParameter("r");
 if (rows === undefined) {
 	rows = 4;
-};
+}
 
 // Gets value of "adjust" URL parameter. If "adjust" is set to true, the "rows" parameter will be overridden.
 var adjust = getURLParameter("adjust") || getURLParameter("a");
@@ -44,90 +67,58 @@ if (adjust == true) {
 		rows = 1.999;
 	} else {
 		rows = 1;
-	};
-};
+	}
+}
 
 // Gets value of "accessToken" hash parameter. If no value for "accessToken" hash parameter specified, default accessToken will be set.
 var aToken = getHashParameter("accessToken") || getHashParameter("access_token") || getHashParameter("token");
 if (aToken === undefined) {
 	aToken = "2086210446.1677ed0.30f2adcd8a9f4a7f9d2a8087055f95f9";
-};
+}
 
 // If userid specified...
 if (uID != undefined) {
 	// Converts userid into integer.
-	uID = parseInt(uID);
-	// Creates Image List.
-	var images = new Array();
-	// Video/Image Switch.
-	var videoSwitch = getURLParameter("video") || getURLParameter("v");
+	uID = parseInt(uID)
 	// Constructs object.
 	var ufObj = {
 		get: 'user',
 		userId: uID,
 		limit: 60,
-		// Fetches data without inserting images into DOM.
-		mock: true,
 		accessToken: aToken,
-		// Here goes nothing.
-		success: function(model) {
-			var data = model.data;
-			for (var i=0; i < data.length; i++) {
-				currentMedia = data[i]
-				// Grabs the image URL.
-				imageURL = currentMedia.images.standard_resolution.url;
-				// "HDIFY" process here. RIP "HDIFY" function.
-				imageURL = imageURL.replace("/s640x640", "");
-				imageURL = imageURL.replace("/s480x480", "");
-				imageURL = imageURL.replace("/s320x320", "");
-				imageURL = imageURL.replace("/sh0.08", "");
-				// Removing Duplicates.
-				if (images.indexOf(imageURL) != -1) {
-					console.log("Duplicate image removed.");
-					// Breaks current iteration on duplicate URL.
-					continue;
-				}
-				// Pushes to "images" array.
-				images.push(imageURL);
-				try {
-					imageCaption = currentMedia.caption.text;
-				} catch (err) {
-					// If no image caption present, set it to an empty string.
-					imageCaption = "";
-				};
-				// Optional video support.
-				if ("videos" in currentMedia && videoSwitch) {
-					$("#instafeed").append('<video controls width="' + 100/rows + '%"><source src="' + currentMedia.videos.standard_resolution.url +'"></video>');
-					continue;
-				}
-				// Pushes image to "instafeed" div.
-				$("#instafeed").append('<a href="' + imageURL + '"><img src="' + imageURL + '" title="' + imageCaption + '" width="' + 100/rows + '%">');
-			};
-		}
-	};
+		template: '<a href="{{model.images.standard_resolution.url}}"><img src="{{model.images.standard_resolution.url}}" title="{{model.caption.text}}" width="' + 100/rows + '%" /></a>'
+	}
 	// Sends object to instafeed.js and runs.
 	var feed = new Instafeed(ufObj);
 	feed.run();
+	// Converts images to HD.
+	hdify();
+	// Temporary fix for "hdify" not working.
+	setTimeout(function() {
+		hdify();
+	}, 500)
 	
 	// When user reaches the end of the page, load more images.
 	// Thanks to Nick Craver for the following scroll solution (http://stackoverflow.com/a/3898152).
 	$(window).scroll(function() {
 		if ($(window).scrollTop() + $(window).height() > $(document).height() - 100) {
 			// Loads more images from feed.
-			feed.next();
-		};
+			feed.next()
+			// Converts said images to HD.
+			hdify();
+		}
 	});
-}
+} 
 // If userid not specified...
 else {
 	// Displays error in "instafeed" div.
-	document.getElementById("instafeed").innerHTML = '<p>"userid" URL parameter not found.</p>';
-};
+	document.getElementById("instafeed").innerHTML = '<p>"userid" URL parameter not found.</p>'
+}
 
 
 // Changes page title.
-pageTitle = document.getElementById("page-title").innerHTML;
-document.getElementById("page-title").innerHTML = uID + " | " + pageTitle;
+pageTitle = document.getElementById("page-title").innerHTML
+document.getElementById("page-title").innerHTML = uID + " | " + pageTitle
 
 
 // EOF.
