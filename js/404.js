@@ -9,7 +9,7 @@ function goTo(dest) {
 	document.getElementById("page-title").innerHTML = "Redirecting... | AR";
 	// location.hash now supported.
 	window.location = dest + window.location.search + window.location.hash;
-}
+};
 
 var base = "http://alir6716.github.io";
 
