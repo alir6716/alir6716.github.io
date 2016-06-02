@@ -1,0 +1,33 @@
+/*
+ * centercenter.css
+ * Center-center a div (inside a div) on a page.
+ * May only work if div is the only element on the page.
+ *
+ * Created by AR. Credit: http://stackoverflow.com/a/25799339
+ */
+ 
+/*
+ * Organise HTML as follows:
+ *
+ * <div class="cc-outer">
+ *     <div class="cc-inner">
+ *         <h1>This is centered!</h1>
+ *     </div>
+ * </div>
+ */
+
+html, body {
+	height: 100%;
+	/* Comment below if scrolling issues. */
+	overflow: hidden;
+}
+.cc-outer {
+	width: 100%;
+	height: 100%;
+	display: table;
+	text-align: center;
+}
+.cc-outer > .cc-inner {
+	display: table-cell;
+	vertical-align: middle;
+}
