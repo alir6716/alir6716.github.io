@@ -54,6 +54,9 @@ switch (window.location.pathname) {
 	case "/igtoken/":
 		goTo(base + "/insta/token");
 		break;
+	case "/maths2015":
+		goTo("http://bit.ly/1S0bdLs");
+		break;
 	
 	/* Random */
 	case "/blondielaugh":
