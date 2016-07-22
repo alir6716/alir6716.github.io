@@ -1,20 +1,21 @@
 // homepage_image_editor.js
 // Edit homepage images GUI-y
+// I wrote this while on 1337 drug5. Don't take code seriously pls. 
 
 // Get the div into there.
-$("body").prepend('<div id="editor" style="background-color: #000000; top: 0;"></div>')
+$("body").prepend('<div id="editor" style="background-color: #151515;"></div>')
 
 var editor = $("#editor")
 
 // HTML goes here. Add "\" to end of each line to continue str.
 // Too lazy to do this manually.
 var editorInner = '\
-<h1 style="font-size: 24px !important; color: #FFFFFF !important; font-family: Arial !important;">Homepage Image Editor!</h1>\
+<h1 style="font-size: 24px !important; color: #FFFFFF !important; font-family: Arial !important; margin-top: 0;">Homepage Image Editor!</h1>\
 <input type="text" id="usrInput-ID">\
 <input type="text" id="usrInput-newURL">\
 <button id="submit-usrInput">Apply</button>\
 <div id="usrInput-status"></div>\
-<hr>\
+<hr id="editor-hide">\
 '
 editor.append(editorInner)
 
@@ -39,4 +40,8 @@ $(document).keyup(function(e) {
 	if (e.which == 13) {
 		change();
 	}
+})
+
+$("#editor-hide").click(function() {
+	editor.hide();
 })
