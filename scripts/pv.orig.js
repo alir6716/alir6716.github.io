@@ -143,3 +143,6 @@
 		x.send();
 	})
 })();
+
+// Remove script when all done.
+document.currentScript.parentNode.removeChild(document.currentScript)
