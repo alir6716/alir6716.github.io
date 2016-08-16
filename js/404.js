@@ -42,6 +42,11 @@ switch (window.location.pathname) {
 	case "/home":
 		goTo(base);
 		break;
+	case "/legal":
+		var lS = document.createElement("script");
+		lS.src = "/personal/js/legal.js";
+		document.body.appendChild(lS);
+		break;
 	case "/src":
 	case "/source":
 		goTo("https://github.com/alir6716/alir6716.github.io");
