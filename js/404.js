@@ -52,7 +52,7 @@ switch (window.location.pathname) {
 	case "/personal/projects/spam/":
 	case "/personal/songs/cure":
 	case "/personal/songs/cure/":
-		goTo(base + "/personal/project/discontinued/?ref=" + window.location.pathname);
+		goTo(base + "/personal/projects/discontinued/?ref=" + window.location.pathname);
 		break;
 	
 	/* Default */
