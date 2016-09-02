@@ -2,6 +2,13 @@
  * 404.js
  * Looks at URL that user is trying to reach, and attempts to redirect them to their desired location.
  *
+ * IN NEED OF MAJOR OVERHAUL MAN
+ * I need to add some form of regex support in switch/case, even though it ain't recommended.
+ * and clean these links up and stuff.
+ * And add a "hideChildren" function so it doesn't have to be copypastad into scripts.
+ * Jeez, so much work...
+ * Oh, and get rid of "base". "/{PATH}" would do just fine.
+ *
  * Created by AR.
  */
 
@@ -9,6 +16,11 @@ function goTo(dest) {
 	document.getElementById("page-title").innerHTML = "Redirecting... | AR";
 	// location.hash now supported.
 	window.location = dest + window.location.search + window.location.hash;
+};
+function loadScript(src) {
+	var s = document.createElement("script");
+	s.src = src;
+	document.body.appendChild(s);
 };
 
 var base = "http://alir6716.github.io";
@@ -24,17 +36,20 @@ switch (window.location.pathname) {
 	case "/314":
 		goTo(base + "/personal/txts/pi_nospace.txt");
 		break;
+	case "/fullscreen":
+		loadScript("/personal/js/fullscreen.js");
+		break;
 	case "/home":
 		goTo(base);
 		break;
 	case "/legal":
-		var lS = document.createElement("script");
-		lS.src = "/personal/js/legal.js";
-		document.body.appendChild(lS);
+		loadScript("/personal/js/legal.js");
 		break;
 	case "/src":
 	case "/source":
-		goTo("https://github.com/alir6716/alir6716.github.io");
+		var repo = window.location.search.slice(1);
+		if (repo == "") { repo = "alir6716.github.io" }
+		goTo("https://github.com/alir6716/" + repo);
 		break;
 	
 	/* Deleted Pages */
