@@ -63,6 +63,11 @@ switch (true) {
 		if (repo == "") { repo = "alir6716.github.io" }
 		goTo("https://github.com/alir6716/" + repo);
 		break;
+	// Just in case I need to hand this out IRL.
+	// Hey, I'm actually using regex on one of these!
+	case match("/mal(retrieve)?"):
+		goTo("/personal/projects/malretrieve/");
+		break;
 	
 	/* Deleted Pages */
 	case match("/personal/fate-carousel"):
