@@ -47,6 +47,9 @@ switch (true) {
 	case match("/redirect"):
 		goTo(window.location.search.replace("?rdr=", ""))
 		break;
+	case match("/(personal/projects/)?contact"):
+		goTo("/personal/contact/", appendParams=true);
+		break;
 	
 	/* Others */
 	case match("/314"):
