@@ -45,12 +45,15 @@ function match(regexStr) {
 switch (true) {
 	/* Moved URLs */
 	case match("/redirect"):
-		goTo(window.location.search.replace("?rdr=", ""))
+		var newLoc = window.location.search.replace("?rdr=", "")
+		// No redirect location specified. Do nothing.
+		if (newLoc == "" || newLoc == "?") { break; }
+		goTo(newLoc)
 		break;
 	case match("/(personal/projects/)?contact"):
 		goTo("/personal/contact/", appendParams=true);
 		break;
-	
+
 	/* Others */
 	case match("/314"):
 		goTo("/personal/txts/pi_nospace.txt");
@@ -71,7 +74,7 @@ switch (true) {
 	case match("/mal(retrieve)?"):
 		goTo("/personal/projects/malretrieve/");
 		break;
-	
+
 	/* Deleted Pages */
 	case match("/personal/fate-carousel"):
 	case match("/personal/projects/cli"):
@@ -82,12 +85,12 @@ switch (true) {
 	case match("/personal/songs/cure"):
 		goTo("/personal/projects/deleted/?ref=" + window.location.pathname);
 		break;
-	
+
 	/* Default */
 	default:
 		console.log("No matches found.");
 		break;
-	
+
 }
 
 /*
