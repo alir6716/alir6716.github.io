@@ -1,76 +1,98 @@
 /*
  * 404.js
- * Looks at URL that user is trying to reach, and attempts to redirect them to their desired location.
- *
- * IN NEED OF MAJOR OVERHAUL MAN
- * I need to add some form of regex support in switch/case, even though it ain't recommended.
- * and clean these links up and stuff.
- * And add a "hideChildren" function so it doesn't have to be copypastad into scripts.
- * Jeez, so much work...
- * Oh, and get rid of "base". "/{PATH}" would do just fine.
+ * With regex support and a bunch of other stuff!
  *
  * Created by AR.
  */
 
-function goTo(dest) {
-	document.getElementById("page-title").innerHTML = "Redirecting... | AR";
-	// location.hash now supported.
-	window.location = dest + window.location.search + window.location.hash;
-};
-function loadScript(src) {
-	var s = document.createElement("script");
-	s.src = src;
-	document.body.appendChild(s);
-};
+// Add optional "appendParams" param, for redirects that may/may not need it.
+function goTo(dest, appendParams) {
+	document.title = "Redirecting... | AR";
+	if (appendParams) { dest += window.location.search + window.location.hash };
+	window.location = dest;
+}
+function loadScript(src, clearScreen) {
+	if (clearScreen) {
+		// Hide all child elements in body.
+		var childNodes = document.body.childNodes;
+		for (var i=0; i < childNodes.length; i++) {
+			var node   = childNodes[i];
+			node.style = "display: none;";
+		}
+	}
+	// Create script and add to DOM.
+	var script = document.createElement("script");
+	script.src = src;
+	document.body.appendChild(script);
+}
 
-var base = "http://alir6716.github.io";
+// Create a function for the matching, to make life easier.
+// Return the bool needed to match the str to regex in the switch/case.
+// Probably won't actually use regex in the cases, but it's there just in case.
+// NOTE TO SELF: "\\" needed instead of "\" for backslash in regex.
+function match(regexStr) {
+	// Add the optional "/" that may appear at the end of the URL.
+	regexStr += "\/?";
+	// Convert the regexStr to regex.
+	var re = new RegExp(regexStr);
+	// Test it against pathname and return bool.
+	return re.test(window.location.pathname);
+}
 
-switch (window.location.pathname) {
+// Set up the unrecommended pseudo-switch-case (for regex matching).
+// Code: https://stackoverflow.com/a/2896642/6790642
+// Regex matches return true if match, and so would work with switches if searching for true.
+switch (true) {
 	/* Moved URLs */
-	case "/redirect":
-	case "/redirect/":
-		goTo(window.location.search.replace("?rdr=", ""));
+	case match("/redirect"):
+		goTo(window.location.search.replace("?rdr=", ""))
+		break;
+	case match("/(personal/projects/)?contact"):
+		goTo("/personal/contact/", appendParams=true);
 		break;
 	
 	/* Others */
-	case "/314":
-		goTo(base + "/personal/txts/pi_nospace.txt");
+	case match("/314"):
+		goTo("/personal/txts/pi_nospace.txt");
 		break;
-	case "/fullscreen":
-		loadScript("/personal/js/fullscreen.js");
+	case match("/fullscreen"):
+		loadScript("/personal/js/fullscreen.js", clearScreen=true);
 		break;
-	case "/home":
-		goTo(base);
+	case match("/legal"):
+		loadScript("/personal/js/legal.js", clearScreen=true);
 		break;
-	case "/legal":
-		loadScript("/personal/js/legal.js");
-		break;
-	case "/src":
-	case "/source":
+	case match("/src"):
 		var repo = window.location.search.slice(1);
 		if (repo == "") { repo = "alir6716.github.io" }
 		goTo("https://github.com/alir6716/" + repo);
 		break;
+	// Just in case I need to hand this out IRL.
+	// Hey, I'm actually using regex on one of these!
+	case match("/mal(retrieve)?"):
+		goTo("/personal/projects/malretrieve/");
+		break;
 	
 	/* Deleted Pages */
-	case "/personal/fate-carousel":
-	case "/personal/fate-carousel/":
-	case "/personal/projects/cli":
-	case "/personal/projects/cli/":
-	case "/personal/projects/command-line":
-	case "/personal/projects/command-line/":
-	case "/personal/projects/console":
-	case "/personal/projects/console/":
-	case "/personal/projects/search":
-	case "/personal/projects/search/":
-	case "/personal/projects/spam":
-	case "/personal/projects/spam/":
-	case "/personal/songs/cure":
-	case "/personal/songs/cure/":
-		goTo(base + "/personal/projects/deleted/?ref=" + window.location.pathname);
+	case match("/personal/fate-carousel"):
+	case match("/personal/projects/cli"):
+	case match("/personal/projects/command-line"):
+	case match("/personal/projects/console"):
+	case match("/personal/projects/search"):
+	case match("/personal/projects/spam"):
+	case match("/personal/songs/cure"):
+		goTo("/personal/projects/deleted/?ref=" + window.location.pathname);
 		break;
 	
 	/* Default */
 	default:
+		console.log("No matches found.");
 		break;
+	
 }
+
+/*
+	Future Idea:
+	Create obj. key = regexStr, value = function
+	Iterate over obj, create regex, match pathname, if match, run function.
+	Dayum, should've done that instead.
+ */
