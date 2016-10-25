@@ -32,9 +32,10 @@ function loadScript(src, clearScreen) {
 // NOTE TO SELF: "\\" needed instead of "\" for backslash in regex.
 function match(regexStr) {
 	// Add the optional "/" that may appear at the end of the URL.
-	regexStr += "\/?";
+	regexStr += "/?";
 	// Convert the regexStr to regex.
-	var re = new RegExp(regexStr);
+	// 2016-10-25: Added "^" and "$" to prevent regex misuse and such.
+	var re = new RegExp("^" + regexStr + "$");
 	// Test it against pathname and return bool.
 	return re.test(window.location.pathname);
 }
