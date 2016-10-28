@@ -76,6 +76,13 @@ switch (true) {
 		goTo("/personal/projects/malretrieve/");
 		break;
 
+	/* Personal Pages shortcut */
+	case match("/p/.*"):
+		var re  = /\/p\/(.*)\/?/;
+		var loc = re.exec(window.location.pathname);
+		window.location = "/personal/" + loc[1];
+		break;
+
 	/* Deleted Pages */
 	case match("/personal/fate-carousel"):
 	case match("/personal/projects/cli"):
