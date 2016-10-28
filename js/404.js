@@ -2,6 +2,8 @@
  * 404.js
  * With regex support and a bunch of other stuff!
  *
+ * NOTE: FIX THIS MESS OF CODE ONE DAY
+ *
  * Created by AR.
  */
 
