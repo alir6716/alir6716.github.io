@@ -88,14 +88,14 @@ switch (true) {
 	case match("/personal/songs/cure"):
 		goTo("/personal/projects/deleted/?ref=" + window.location.pathname);
 		break;
-		
+
 	/* Personal Pages shortcut */
 	case match("/p/.*"):
 		var re  = /\/p\/(.*)\/?/;
 		var loc = re.exec(window.location.pathname);
-		window.location = "/personal/" + loc[1];
+		//window.location = "/personal/" + loc[1];
+		goTo("/personal/" + loc[1], appendParams=true);
 		break;
-
 
 	/* Default */
 	default:
