@@ -79,6 +79,7 @@ switch (true) {
 		break;
 
 	/* Deleted Pages */
+	case match("/about"):
 	case match("/personal/fate-carousel"):
 	case match("/personal/projects/cli"):
 	case match("/personal/projects/command-line"):
