@@ -98,6 +98,13 @@ switch (true) {
 		goTo("/personal/" + loc[1], appendParams=true);
 		break;
 
+	/* Projects shortcut */
+	case match("/proj(?:ects)?/.*"):
+		var re  = /\/proj(?:ects)?\/(.*)\/?/;
+		var loc = re.exec(window.location.pathname);
+		goTo("/personal/projects/" + loc[1], appendParams=true);
+		break;
+
 	/* Default */
 	default:
 		console.log("No matches found.");
