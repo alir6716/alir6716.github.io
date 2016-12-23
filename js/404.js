@@ -85,7 +85,7 @@ switch (true) {
 	case match("/personal/projects/command-line"):
 	case match("/personal/projects/console"):
 	// 2016-12-23: Hiding until stuff sorted out.
-	case match("/projects/malretrieve"):
+	case match("/personal/projects/malretrieve"):
 	case match("/personal/projects/search"):
 	case match("/personal/projects/spam"):
 	case match("/personal/songs/cure"):
