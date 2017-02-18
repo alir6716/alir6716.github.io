@@ -77,6 +77,10 @@ switch (true) {
 	case match("/mal(retrieve)?"):
 		goTo("/personal/projects/malretrieve/");
 		break;
+	// I'm lazy.
+	case match("/h(?:ost)?"):
+		goTo("/personal/host/");
+		break;
 
 	/* Deleted Pages */
 	case match("/about"):
