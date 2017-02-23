@@ -53,8 +53,11 @@ switch (true) {
 		if (newLoc == "" || newLoc == "?") { break; }
 		goTo(newLoc)
 		break;
-	case match("/(personal/projects/)?contact"):
-		goTo("/personal/contact/", appendParams=true);
+	case match("/personal(?:/projects)?/contact"):
+		goTo("/contact/", appendParams=true);
+		break;
+	case match("/personal/projects/sendfile"):
+		goTo("/contact/sendfile/", appendParams=true);
 		break;
 
 	/* Others */
