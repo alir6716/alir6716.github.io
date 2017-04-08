@@ -81,6 +81,8 @@ switch (true) {
 		goTo("/personal/projects/malretrieve/");
 		break;
 	// I'm lazy.
+	// Oh come on
+	case match("/(?:personal/)?h(?:ost)?"):
 	case match("/(?:personal/)?h(?:ost)?/.*"):
 		var re = /\/(?:personal\/)?h(?:ost)?\/(.*)/;
 		var sp = window.location.pathname.match(re)[1];
