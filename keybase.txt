@@ -1,0 +1,54 @@
+==================================================================
+https://keybase.io/alir6716
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://alir6716.github.io
+  * I am alir6716 (https://keybase.io/alir6716) on keybase.
+  * I have a public key ASD_gu6Nd9sGvQ3ZmjRKiaKYn1oLBiWnXIUBbiRRmKPWkwo
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "eldest_kid": "0120ff82ee8d77db06bd0dd99a344a89a2989f5a0b0625a75c85016e245198a3d6930a",
+            "host": "keybase.io",
+            "kid": "0120ff82ee8d77db06bd0dd99a344a89a2989f5a0b0625a75c85016e245198a3d6930a",
+            "uid": "3a345f3f3f52721ddf7fa657262e7819",
+            "username": "alir6716"
+        },
+        "service": {
+            "hostname": "alir6716.github.io",
+            "protocol": "https:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "client": {
+        "name": "keybase.io go client",
+        "version": "1.0.22"
+    },
+    "ctime": 1494097364,
+    "expire_in": 504576000,
+    "merkle_root": {
+        "ctime": 1494097335,
+        "hash": "f143cd65bfd252c75aed444f65293b42a6d1f1a15601fe390f2e62c646352cdc7c174753ae04655dc1c078401ed31fd867ce7e06ec16c57b82ba6cfa9cf07a41",
+        "seqno": 1056470
+    },
+    "prev": "2019edaa75139941b45123a8744ffe6191882a89947453cd10946a0ae0210d9d",
+    "seqno": 7,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEg/4LujXfbBr0N2Zo0SomimJ9aCwYlp1yFAW4kUZij1pMKp3BheWxvYWTFAvt7ImJvZHkiOnsia2V5Ijp7ImVsZGVzdF9raWQiOiIwMTIwZmY4MmVlOGQ3N2RiMDZiZDBkZDk5YTM0NGE4OWEyOTg5ZjVhMGIwNjI1YTc1Yzg1MDE2ZTI0NTE5OGEzZDY5MzBhIiwiaG9zdCI6ImtleWJhc2UuaW8iLCJraWQiOiIwMTIwZmY4MmVlOGQ3N2RiMDZiZDBkZDk5YTM0NGE4OWEyOTg5ZjVhMGIwNjI1YTc1Yzg1MDE2ZTI0NTE5OGEzZDY5MzBhIiwidWlkIjoiM2EzNDVmM2YzZjUyNzIxZGRmN2ZhNjU3MjYyZTc4MTkiLCJ1c2VybmFtZSI6ImFsaXI2NzE2In0sInNlcnZpY2UiOnsiaG9zdG5hbWUiOiJhbGlyNjcxNi5naXRodWIuaW8iLCJwcm90b2NvbCI6Imh0dHBzOiJ9LCJ0eXBlIjoid2ViX3NlcnZpY2VfYmluZGluZyIsInZlcnNpb24iOjF9LCJjbGllbnQiOnsibmFtZSI6ImtleWJhc2UuaW8gZ28gY2xpZW50IiwidmVyc2lvbiI6IjEuMC4yMiJ9LCJjdGltZSI6MTQ5NDA5NzM2NCwiZXhwaXJlX2luIjo1MDQ1NzYwMDAsIm1lcmtsZV9yb290Ijp7ImN0aW1lIjoxNDk0MDk3MzM1LCJoYXNoIjoiZjE0M2NkNjViZmQyNTJjNzVhZWQ0NDRmNjUyOTNiNDJhNmQxZjFhMTU2MDFmZTM5MGYyZTYyYzY0NjM1MmNkYzdjMTc0NzUzYWUwNDY1NWRjMWMwNzg0MDFlZDMxZmQ4NjdjZTdlMDZlYzE2YzU3YjgyYmE2Y2ZhOWNmMDdhNDEiLCJzZXFubyI6MTA1NjQ3MH0sInByZXYiOiIyMDE5ZWRhYTc1MTM5OTQxYjQ1MTIzYTg3NDRmZmU2MTkxODgyYTg5OTQ3NDUzY2QxMDk0NmEwYWUwMjEwZDlkIiwic2Vxbm8iOjcsInRhZyI6InNpZ25hdHVyZSJ9o3NpZ8RArpIdTDiOcDb6TDdAP6nPEBxx5aqrFGh903psXQRn0p/f4OWAcGCCbLo8b9DhX7erf6pbSSWBuXDrOgVayuJ/AqhzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIN7R3xwrjOyWLAfOZGv01HxuNM5gKHZwmvlIqMnJeelro3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/alir6716
+
+==================================================================
