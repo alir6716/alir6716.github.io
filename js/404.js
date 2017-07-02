@@ -70,6 +70,9 @@ switch (true) {
 	case match("/legal"):
 		loadScript("/personal/js/legal.js", clearScreen=true);
 		break;
+	case match("/pag12"):
+		goTo("/personal/others/PAG12.pptx");
+		break;
 	case match("/src"):
 		var repo = window.location.search.slice(1);
 		if (repo == "") { repo = "alir6716.github.io" }
