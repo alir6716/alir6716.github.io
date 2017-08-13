@@ -59,6 +59,9 @@ switch (true) {
 	case match("/personal/projects/sendfile"):
 		goTo("/contact/sendfile/", appendParams=true);
 		break;
+	case match("/personal/projects/days-since-y13s-leave"):
+		goTo("/proj/days-counter/?thing=y13s_leave", appendParams=true);
+		break;
 
 	/* Others */
 	case match("/314"):
